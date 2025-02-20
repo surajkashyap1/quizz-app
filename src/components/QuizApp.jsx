@@ -72,6 +72,25 @@ const QuizApp = () => {
       type: "int"
     },
   ];
+  
+  useEffect(() => {
+    let timer;
+    if (!isQuizComplete && selectedAnswer === null && timeLeft > 0) {
+      timer = setInterval(() => {
+        setTimeLeft((prevTime) => {
+          if (prevTime <= 1) {
+            handleNext();
+            return 30; 
+          }
+          return prevTime - 1;
+        });
+      }, 1000);
+    }
+
+    return () => {
+      if (timer) clearInterval(timer);
+    };
+  }, [timeLeft, selectedAnswer, isQuizComplete]);
 
   const handleIntegerSubmit = () => {
     if (selectedAnswer !== null) return;
