@@ -47,6 +47,9 @@ The app is deployed using Vercel. If you've linked your GitHub repository to Ver
 -To manually deploy:
 vercel --prod
 
+
+7) Link to an already deployed app: https://quizz-app-zeta-blush.vercel.app/
+
 Contributing
 
 Feel free to fork the repository and submit pull requests for improvements!
